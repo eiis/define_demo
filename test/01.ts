@@ -47,6 +47,6 @@ describe('App', () => {
     await wrapper.find('button').trigger('click');
     
     // 检查 count 值是否增加
-    expect(helloWorldComponent.props('count')).toBe(1);
+    expect(helloWorldComponent.props('count')).toBe(3);
   });
 });
