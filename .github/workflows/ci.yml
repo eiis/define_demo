@@ -1,0 +1,31 @@
+name: define_demo
+
+on:
+  push:
+    branches:
+      - master # 或者你的默认分支
+  pull_request:
+    branches:
+      - master # 或者你的默认分支
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16' # 或者你的项目所需的 Node.js 版本
+      
+    - name: Install pnpm
+      run: npm install -g pnpm # 全局安装 pnpm
+      
+    - name: Install dependencies
+      run: pnpm install # 使用 pnpm 安装依赖项
+      
+    - name: Run vitest
+      run: pnpm test # 假设你的 package.json 中有一个名为 test 的脚本来运行 vitest
