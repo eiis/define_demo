@@ -1,18 +1,44 @@
 <script setup lang="ts">
-// import {ref} from 'vue'
-// import HelloWorld from "./components/HelloWorld.vue"
-import VTest from "./components/VTest.vue"
+import {ref} from 'vue'
+import HelloWorld from "./components/HelloWorld.vue"
+// import VTest from "./components/VTest.vue"
+import { provide } from "vue";
+// import { header } from './index'
 
-// const count = ref(1)
 
-// function click(){
-//   console.log(count.value);
-//   count.value +=1
-// }
+// const header = ref('header');
+
+// import Loop from './components/Loop.vue';
+// const items = [
+//   {
+//     key: 'a',
+//     label: 'A',
+//   },
+//   {
+//     key: 'b',
+//     label: 'B',
+//   },
+// ];
+
+const count = ref(1)
+// const header = ref('header');
+
+function click(){
+  console.log(count.value);
+  count.value +=1
+}
+provide(1,3)
+provide('1',3)
 </script>
 
 <template>
-  <!-- <HelloWorld :count="count" @click="click"/> -->
-  <v-test email="test" name="test"></v-test>
+  <HelloWorld :count="count" @click="click"/>
+  <!-- <v-test email="email" name="name"></v-test>
+
+  <Loop :items="items">
+    <template v-for="item in items" :key="item.key" #[header]="item">
+      {{ item }}
+    </template>
+  </Loop> -->
 </template>
 

@@ -2,7 +2,6 @@
 import {computed,ref,useAttrs} from 'vue'
 //ts导入类型语法
 import type {Ref,UnwrapRef} from 'vue'
-import type { CustomAttrs} from './type'
 
 export interface Props {
   count?: number
@@ -36,8 +35,10 @@ const url =`../assets/${ilogo}.svg`
 function testDynamicImportMetaUrl(ilogo:string) {
   // console.log(`../assets/${ilogo}.png`,'ilogo');
   // const url = `../assets/${ilogo}.svg`
-  const metaUrl = new URL(`../assets/${ilogo}.svg`,import.meta.url).href
-  src.value = metaUrl
+  // const metaUrl = new URL(`../assets/${ilogo}.svg`,import.meta.url).href
+  // src.value  = new URL('../assets/'+ ilogo +'.svg', import.meta.url).href
+  src.value  =  new URL(`../assets/${ilogo}.svg`, import.meta.url).href
+  // src.value = metaUrl
   // document.querySelector(`.dynamic-import-meta-url-img`).src = metaUrl
   console.log(src.value,'metaUrl');
   // console.log(import.meta.url,'import.meta.url');
@@ -80,6 +81,10 @@ const obj:MyButtonProps = {
 }
 
 console.log(obj);
+const data = ref({
+  version:__APP_VERSION__
+})
+console.log(data.value.version);
 
 
 // const {count} =defineProps<{ count: number }>()
@@ -91,9 +96,10 @@ const even = computed(() =>  (count! % 2 === 0 ? 'even' : 'odd'));
   <div class="hello">
     <h1 class="count">{{ count }}</h1>
     <h1> The number is {{ even }}</h1>
+    <h1> The APP_VERSION is {{ data.version }}</h1>
     <button @click="click">Click</button>
-    <!-- <img class="dynamic-import-meta-url-img" src="../assets/vue.svg"/> -->
-    <!-- <img class="dynamic-import-meta-url-img" :src="src"/> -->
+    <img class="dynamic-import-meta-url-img" src="../assets/vue.svg"/>
+    <img class="dynamic-import-meta-url-img" :src="src"/>
   </div>
 </template>
 

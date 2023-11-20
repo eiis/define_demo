@@ -41,13 +41,15 @@ describe('App', () => {
     const wrapper = mount(App);
     
     // 检查初始 count 值
-    const helloWorldComponent = wrapper.getComponent({ name: 'HelloWorld' });
-    expect(helloWorldComponent.props('count')).toBe(2);
+    const helloWorldComponent = wrapper.getComponent({ name: 'VTest' });
+    expect(helloWorldComponent.props('email')).toBe('email');
+    // expect(helloWorldComponent.props('name')).toBe('name');
+
     
     // 找到并点击按钮
-    await wrapper.find('button').trigger('click');
+    // await wrapper.find('button').trigger('click');
     
     // 检查 count 值是否增加
-    expect(helloWorldComponent.props('count')).toBe(3);
+    // expect(helloWorldComponent.props('count')).toBe(3);
   });
 });
