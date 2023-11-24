@@ -42,3 +42,11 @@ provide('1',3)
   </Loop> -->
 </template>
 
+<style scoped lang="scss">
+ ::v-deep {
+  .count {
+    color:green;
+  }
+ }
+</style>
+
