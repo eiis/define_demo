@@ -41,8 +41,8 @@ describe('App', () => {
     const wrapper = mount(App);
     
     // 检查初始 count 值
-    const helloWorldComponent = wrapper.getComponent({ name: 'VTest' });
-    expect(helloWorldComponent.props('email')).toBe('email');
+    const helloWorldComponent = wrapper.getComponent({ name: 'HelloWorld' });
+    expect(helloWorldComponent.props('count')).toBe(1);
     // expect(helloWorldComponent.props('name')).toBe('name');
 
     
