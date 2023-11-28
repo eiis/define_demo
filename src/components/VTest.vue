@@ -7,13 +7,18 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
+import { InjectKeyUser, InjectKeyCount } from '../utils/context'
 // console.log(import.meta.env.VITE_APP_TITLE, 'import.meta.env.VITE_APP_TITLE');
 
 // console.log(__VUE_OPTIsONS_API__,__VUE_PROD_DEVTOOLS__,'__VUE_OPTIONS_API__');
 
-const aa = inject('1',4)
+const aa = inject(InjectKeyCount,3)
 //@ts-ignore
 const bb = inject(1,4)
+
+const user = inject(InjectKeyUser)
+console.log(user);
+
 
 
 interface Extended extends /* @vue-ignore */ Test {

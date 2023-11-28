@@ -3,6 +3,7 @@ import {ref} from 'vue'
 import HelloWorld from "./components/HelloWorld.vue"
 // import VTest from "./components/VTest.vue"
 import { provide } from "vue";
+import { InjectKeyUser, InjectKeyCount } from './utils/context'
 // import { header } from './index'
 
 
@@ -27,7 +28,18 @@ function click(){
   console.log(count.value);
   count.value +=1
 }
-provide(1,3)
+// interface UserInfo {
+//   id:number,
+//   name:string
+// }
+
+// const injectKeyUser:InjectionKey<UserInfo> = Symbol()
+
+provide(InjectKeyUser,{
+  id:1,
+  name:'1'
+})
+provide(InjectKeyCount,1)
 provide('1',3)
 </script>
 
