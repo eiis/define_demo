@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref, provide} from 'vue'
 import HelloWorld from "./components/HelloWorld.vue"
 // import VTest from "./components/VTest.vue"
-import { provide } from "vue";
 import { InjectKeyUser, InjectKeyCount } from './utils/context'
 // import { header } from './index'
+
+import {emitter, FLASH_EVENT,} from './utils/mitter'
 
 
 // const header = ref('header');
@@ -27,6 +28,10 @@ const count = ref(1)
 function click(){
   console.log(count.value);
   count.value +=1
+  emitter.emit(FLASH_EVENT,{
+    message:'hello',
+    color:'red'
+  })
 }
 // interface UserInfo {
 //   id:number,
@@ -41,6 +46,7 @@ provide(InjectKeyUser,{
 })
 provide(InjectKeyCount,1)
 provide('1',3)
+
 </script>
 
 <template>

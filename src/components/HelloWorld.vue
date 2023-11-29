@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import {computed,ref,useAttrs} from 'vue'
+import {computed,onMounted,ref,useAttrs} from 'vue'
 //ts导入类型语法
 import type {Ref,UnwrapRef} from 'vue'
+
+import {emitter, FLASH_EVENT} from '../utils/mitter'
 
 export interface Props {
   count?: number
@@ -21,6 +23,11 @@ function click(){
   
   attrs.onClick()
 }
+onMounted(() => {
+  emitter.on(FLASH_EVENT, e => {
+    console.log(e,'e');
+  });
+});
 
 
 let b:Ref<number> =ref(1)

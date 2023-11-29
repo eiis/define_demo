@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
+// import type { PropType } from 'vue'
 import { InjectKeyUser, InjectKeyCount } from '../utils/context'
 // console.log(import.meta.env.VITE_APP_TITLE, 'import.meta.env.VITE_APP_TITLE');
 
@@ -25,8 +26,13 @@ interface Extended extends /* @vue-ignore */ Test {
   // name: string;
   email: string;
 }
+//基于类型声明
 defineProps<Extended>();
 
+//运行时声明
+// defineProps({
+//   book: Object as PropType<Extended>
+// })
 // interface MyButtonProps extends ButtonHTMLAttributes {}
 
 // defineProps<MyButtonProps>();
