@@ -5,7 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue"
 import { InjectKeyUser, InjectKeyCount } from './utils/context'
 // import { header } from './index'
 
-import {emitter, FLASH_EVENT,} from './utils/mitter'
+import {emitter, FLASH_EVENT} from './utils/mitter'
 
 
 // const header = ref('header');
