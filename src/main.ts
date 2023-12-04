@@ -10,6 +10,7 @@ import App from './App.vue'
 // const eventBus = mitt()
 
 
+
 const app = createApp(App)
 // 把 mitt 加入 Vue 的全域 Property，讓任何一個元件都能使用
 // app.config.globalProperties.eventBus = eventBus;

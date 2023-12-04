@@ -5,7 +5,7 @@ export default function VitePluginDemo(): Plugin{
     name: 'vite-plugin-demo',
 
     config(config){
-      // console.log('config',config);
+      console.log('config',config);
       return{
         define: {
           __VUE_OPTIONS_API__: false,
@@ -13,10 +13,10 @@ export default function VitePluginDemo(): Plugin{
       }
     },
     configResolved(config){
-      // console.log('configResolved',config.define);
+      console.log('configResolved',config.define);
     },
     load(id){
-      // console.log('load',id);
+      console.log('load',id);
     }
   }
 }
