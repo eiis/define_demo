@@ -15,16 +15,15 @@
     "noEmit": false,
     "jsx": "preserve",
 
-    "types": [
-      "vite/client"
-    ],
+    "typeRoots": ["./node_modules/@types", "src/types"],
+    "types": ["vite/client","vite-plugin-vsharp"], // 如果你的声明文件直接在types目录下
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [ "src/**/*.ts","src/**/*.d.ts", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [ "src/**/*.ts","src/**/*.d.ts", "src/**/*.vue","vite.config.ts"],
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }

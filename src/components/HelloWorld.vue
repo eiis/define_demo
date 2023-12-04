@@ -107,6 +107,8 @@ const even = computed(() =>  (count! % 2 === 0 ? 'even' : 'odd'));
     <button @click="click">Click</button>
     <img class="dynamic-import-meta-url-img" src="../assets/vue.svg"/>
     <img class="dynamic-import-meta-url-img" :src="src"/>
+    <img src="../assets/image/1.sm.jpg" alt="">
+    <img src="../assets/image/1.sm.webp" alt="">
   </div>
 </template>
 

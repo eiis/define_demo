@@ -1,12 +1,13 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {    
-    "composite": true,
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
-  },
-  "include": ["vite.config.ts"],
-  
-}
+// {
+//   "extends": "./tsconfig.json",
+//   "compilerOptions": {    
+//     "composite": true,
+//     "skipLibCheck": true,
+//     "module": "ESNext",
+//     "moduleResolution": "bundler",
+//     "noUnusedLocals": false,
+//     "noUnusedParameters": false,
+//     "allowSyntheticDefaultImports": true
+//   },
+//   "include": ["vite.config.ts","src/**/*.ts"],
+// }
