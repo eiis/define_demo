@@ -2,7 +2,7 @@
 import { defineConfig ,loadEnv} from 'vite'
 import vue from '@vitejs/plugin-vue'
 // import VueComplexTypes from "unplugin-vue-complex-types/vite";
-// import VitePluginDemo from './src/plugins/vite-plugin-demo'
+import VitePluginDemo from './src/plugins/vite-plugin-demo'
 
 export default defineConfig(({ command, mode })=>{
   const env = loadEnv(mode, process.cwd(), '')
@@ -18,7 +18,7 @@ export default defineConfig(({ command, mode })=>{
           propsDestructure: true
         }
       }),
-      // VitePluginDemo(),
+      VitePluginDemo(),
       // VueComplexTypes({
       //   tsconfigPath: path.join(process.cwd(), "tsconfig.json"),
       // }),
